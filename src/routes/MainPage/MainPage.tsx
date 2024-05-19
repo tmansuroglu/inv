@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { useLoaderData } from "react-router-dom";
+import { useAsyncValue } from "react-router-dom";
 // TODO: there is unnecessary search parameter in the requests
 // Necessary commands to run the application should preferably be communicated in the README.md file.
 // Loading indicator for data and page change
@@ -10,10 +10,10 @@ import { useLoaderData } from "react-router-dom";
 type MainPageProps = {};
 
 export const MainPage = ({ ...props }: MainPageProps) => {
-  const data = useLoaderData();
+  // TODO: fix any
+  const { data } = useAsyncValue() as any;
 
-  console.log("data", data);
-
+  console.log(data);
   return (
     <div>
       <Button variant="contained" color="primary">

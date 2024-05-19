@@ -1,39 +1,11 @@
-import React, { lazy } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 import { Provider as ReduxProvider } from "react-redux";
-import { store, injectedRtkApi } from "./redux";
-import { createBrowserRouter, defer, RouterProvider } from "react-router-dom";
-import Layout from "./Layout";
-import { Error } from "./views";
-
-const MainPage = lazy(() => import("./views/MainPage/MainPage"));
-
-export const delay = (ms: number) => {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-};
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    errorElement: <Error />,
-    children: [
-      {
-        path: "/",
-        element: <MainPage />,
-        loader: async () => {
-          const response = store.dispatch(
-            injectedRtkApi.endpoints.getTitle.initiate({ t: "pokemon" })
-          );
-
-          return defer({ response });
-        },
-      },
-    ],
-  },
-]);
+import { store } from "./redux";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
