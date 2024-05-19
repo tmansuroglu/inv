@@ -1,6 +1,10 @@
 import { Button } from "@mui/material";
 // TODO: add alias
 // TODO: router
+// TODO: there is unnecessary search parameter in the requests
+// Necessary commands to run the application should preferably be communicated in the README.md file.
+// Loading indicator
+// filter etc
 import { useGetTitleQuery } from "../../redux";
 
 type MainPageProps = {};
