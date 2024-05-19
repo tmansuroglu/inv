@@ -7,7 +7,6 @@ const config: ConfigFile = {
   outputFile: "./src/redux/services/generatedApi.ts",
   exportName: "api",
   tag: true,
-  hooks: true,
 };
 
 export default config;

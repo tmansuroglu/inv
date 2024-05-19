@@ -1,6 +1,2 @@
 export { store } from "./store";
-export {
-  useGetIdQuery,
-  useGetTitleQuery,
-  useTitleSearchQuery,
-} from "./services/generatedApi";
+export { injectedRtkApi } from "./services/generatedApi";

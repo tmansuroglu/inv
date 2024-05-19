@@ -1,12 +1,9 @@
-import type { CracoConfig } from "@craco/types";
 import path from "path";
 
-const cracoConfig: CracoConfig = {
+module.exports = {
   webpack: {
     alias: {
       "@redux": path.resolve(__dirname, "src/redux"),
     },
   },
 };
-
-export default cracoConfig;

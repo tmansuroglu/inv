@@ -1,19 +1,18 @@
 import { Button } from "@mui/material";
-// TODO: router
+import { useLoaderData } from "react-router-dom";
 // TODO: there is unnecessary search parameter in the requests
 // Necessary commands to run the application should preferably be communicated in the README.md file.
-// Loading indicator
+// Loading indicator for data and page change
+// Error UI
 // filter etc
-import { useTitleSearchQuery } from "@redux";
+// error boundary
 
 type MainPageProps = {};
 
 export const MainPage = ({ ...props }: MainPageProps) => {
-  const { data, error, isLoading } = useTitleSearchQuery({ s: "pokemon" });
+  const data = useLoaderData();
 
   console.log("data", data);
-  console.log("error", error);
-  console.log("isLoading", isLoading);
 
   return (
     <div>
@@ -23,3 +22,5 @@ export const MainPage = ({ ...props }: MainPageProps) => {
     </div>
   );
 };
+
+export default MainPage;

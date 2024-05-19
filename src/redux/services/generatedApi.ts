@@ -4,7 +4,7 @@ export const addTagTypes = [
   "ID Parameter",
   "Search Parameter",
 ] as const;
-const injectedRtkApi = api
+export const injectedRtkApi = api
   .enhanceEndpoints({
     addTagTypes,
   })
@@ -95,5 +95,3 @@ export type TitleSearchApiArg = {
   /** JSONP callback name */
   callback?: string;
 };
-export const { useGetTitleQuery, useGetIdQuery, useTitleSearchQuery } =
-  injectedRtkApi;
