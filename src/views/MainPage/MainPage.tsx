@@ -4,12 +4,12 @@ import { Button } from "@mui/material";
 // Necessary commands to run the application should preferably be communicated in the README.md file.
 // Loading indicator
 // filter etc
-import { useGetTitleQuery } from "@redux";
+import { useTitleSearchQuery } from "@redux";
 
 type MainPageProps = {};
 
 export const MainPage = ({ ...props }: MainPageProps) => {
-  const { data, error, isLoading } = useGetTitleQuery({ t: "pokemon" });
+  const { data, error, isLoading } = useTitleSearchQuery({ s: "pokemon" });
 
   console.log("data", data);
   console.log("error", error);
