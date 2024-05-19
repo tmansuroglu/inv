@@ -3,7 +3,8 @@
     "target": "es5",
     "paths": {
       "@redux": ["./src/redux"],
-      "@components": ["./src/components"]
+      "@components": ["./src/components"],
+      "@views": ["./src/views"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

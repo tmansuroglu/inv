@@ -2,11 +2,9 @@ import { Grid, Pagination, Stack } from "@mui/material";
 import { useAsyncValue } from "react-router-dom";
 import { MovieCard } from "@components";
 // TODO: there is unnecessary search parameter in the requests
-// Necessary commands to run the application should preferably be communicated in the README.md file.
-// Loading indicator for data and page change
-// Error UI
-// filter etc
+// TODO: any remove
 // error boundary
+// Necessary commands to run the application should preferably be communicated in the README.md file.
 
 type MainPageProps = {};
 
