@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "es5",
     "paths": {
-      "@redux": ["./src/redux"]
+      "@redux": ["./src/redux"],
+      "@components": ["./src/components"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

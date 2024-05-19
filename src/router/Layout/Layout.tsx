@@ -18,10 +18,9 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <LayoutBox>
       <CssBaseline />
-      <AppBar position="fixed">
+      <AppBar position="relative">
         <Toolbar>best header ever</Toolbar>
       </AppBar>
-      <Toolbar />
       <MainBox component="main">
         <Container>
           <Suspense fallback={<div>Loading 2...</div>}>
