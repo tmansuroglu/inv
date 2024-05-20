@@ -13,7 +13,6 @@ import { usePagination } from "./MainPage.utils";
 // TODO: in depth function test
 
 // TODO: cross browser
-// TODO: responsive
 
 type MainPageProps = {};
 
@@ -30,7 +29,7 @@ export const MainPage = ({ ...props }: MainPageProps) => {
     <StyledStack spacing={3}>
       <Grid container spacing={3}>
         {data?.Search?.map((item: any) => (
-          <Grid xs={12} sm={6} md={4} lg={3} key={item.imdbID}>
+          <Grid xs={12} sm={6} md={4} xl={3} key={item.imdbID}>
             <MovieCard
               name={item.Title}
               imdbId={item.imdbID}
@@ -48,7 +47,7 @@ export const MainPage = ({ ...props }: MainPageProps) => {
           color="primary"
           variant="text"
           shape="rounded"
-          size="large"
+          size="small"
         />
       </Stack>
     </StyledStack>

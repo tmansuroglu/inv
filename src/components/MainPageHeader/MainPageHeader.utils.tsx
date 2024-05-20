@@ -1,9 +1,32 @@
-import { MenuItem, SelectChangeEvent } from "@mui/material";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  TextField,
+} from "@mui/material";
 import { useCallback, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { SearchParamKeys } from "@router";
 import { debounce } from "lodash";
 import dayjs, { Dayjs } from "dayjs";
+import Grid from "@mui/material/Unstable_Grid2";
+import { DatePicker } from "@mui/x-date-pickers";
+
+export enum MovieType {
+  None = "",
+  Series = "series",
+  Movie = "movie",
+  Episode = "episode",
+}
+
+export const generateTypeOptions = () =>
+  Object.entries(MovieType).map(([key, value]) => (
+    <MenuItem key={key} value={value}>
+      {key}
+    </MenuItem>
+  ));
 
 type SearchParamValue = string;
 
@@ -71,26 +94,42 @@ export const useInputs = () => {
     });
 
   const yearValue = getInputValueFromSearchParams(SearchParamKeys.Year);
-  return {
-    typeInputValue: getInputValueFromSearchParams(SearchParamKeys.Type),
-    yearInputValue: yearValue ? dayjs(yearValue) : undefined,
-    searchInputValue: searchInputValue,
-    handleSearchInputChange,
-    handleYearInputChange,
-    handleTypeInputChange,
-  };
+
+  const typeInputValue = getInputValueFromSearchParams(SearchParamKeys.Type);
+
+  const yearInputValue = yearValue ? dayjs(yearValue) : undefined;
+
+  return [
+    <Grid xs={12} md={4} key={"search input"}>
+      <FormControl fullWidth>
+        <TextField
+          label="Search"
+          variant="outlined"
+          value={searchInputValue}
+          onChange={handleSearchInputChange}
+        />
+      </FormControl>
+    </Grid>,
+    <Grid xs={12} md={4} key={"type input"}>
+      <FormControl fullWidth>
+        <InputLabel>Type</InputLabel>
+        <Select
+          label="Type"
+          value={typeInputValue}
+          onChange={handleTypeInputChange}
+        >
+          {generateTypeOptions()}
+        </Select>
+      </FormControl>
+    </Grid>,
+    <Grid xs={12} md={4} key="date input">
+      <FormControl fullWidth>
+        <DatePicker
+          views={["year"]}
+          onChange={handleYearInputChange}
+          value={yearInputValue}
+        />
+      </FormControl>
+    </Grid>,
+  ];
 };
-
-export enum MovieType {
-  None = "",
-  Series = "series",
-  Movie = "movie",
-  Episode = "episode",
-}
-
-export const generateTypeOptions = () =>
-  Object.entries(MovieType).map(([key, value]) => (
-    <MenuItem key={key} value={value}>
-      {key}
-    </MenuItem>
-  ));
