@@ -126,8 +126,14 @@ export const useInputs = () => {
       <FormControl fullWidth>
         <MobileDatePicker
           views={["year"]}
-          onChange={handleYearInputChange}
+          onAccept={handleYearInputChange}
           value={yearInputValue}
+          slotProps={{
+            actionBar: {
+              actions: ["clear", "accept", "cancel"],
+              sx: { justifyContent: "space-between" },
+            },
+          }}
         />
       </FormControl>
     </Grid>,
