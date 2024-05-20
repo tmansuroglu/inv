@@ -1,3 +1,13 @@
+### [Deployed website](https://inv-case-tarkan-mansuroglu.netlify.app/?type=movie)
+
+# `Remember to create an '.env.local' file before running the project.`
+
+# `You can use the '.env.example' file as template.`
+
+### [To get new API key](https://www.omdbapi.com/apikey.aspx)
+
+'TODO.md' for next steps
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
