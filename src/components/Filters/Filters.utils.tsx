@@ -85,6 +85,7 @@ export enum MovieType {
   None = "",
   Series = "series",
   Movie = "movie",
+  Episode = "episode",
 }
 
 export const generateTypeOptions = () =>

@@ -10,6 +10,7 @@ export enum SearchParamKeys {
 }
 
 export const DEFAULT_PAGE = 1;
+export const DEFAULT_SEARCH_PARAM = "pokemon";
 
 export const mainPageLoader = async ({ request }: LoaderFunctionArgs) => {
   const url = new URL(request.url);
@@ -20,7 +21,9 @@ export const mainPageLoader = async ({ request }: LoaderFunctionArgs) => {
 
   const yearParam = url.searchParams.get(SearchParamKeys.Year);
 
-  const searchParam = url.searchParams.get(SearchParamKeys.Search) || "";
+  const searchParam =
+    url.searchParams.get(SearchParamKeys.Search)?.toLocaleLowerCase() ||
+    DEFAULT_SEARCH_PARAM;
 
   const pageParam = url.searchParams.get(SearchParamKeys.Page);
 

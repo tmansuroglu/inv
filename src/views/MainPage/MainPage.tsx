@@ -15,8 +15,6 @@ import { usePagination } from "./MainPage.utils";
 // TODO: cross browser
 // TODO: responsive
 // TODO: details page
-// TODO: CRITICAL add episode !
-// TODO: CRITICAL pokemon default
 
 type MainPageProps = {};
 
