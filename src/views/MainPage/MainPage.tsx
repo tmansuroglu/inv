@@ -6,14 +6,6 @@ import { StyledStack } from "./MainPage.styles";
 import { calculatePageCount } from "./MainPage.utils";
 import { usePagination } from "./MainPage.utils";
 
-// TODO: there is unnecessary search parameter in the requests
-// TODO: improve types. Avoid the use of 'any'.
-// TODO: Add error boundary
-// TODO  Deploy the app
-// TODO: in depth function test
-
-// TODO: cross browser
-
 type MainPageProps = {};
 
 export const MainPage = ({ ...props }: MainPageProps) => {
