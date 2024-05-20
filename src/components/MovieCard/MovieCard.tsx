@@ -25,8 +25,8 @@ export default function MovieCard({
       <StyledCardActionArea>
         <StyledCardMedia component="img" image={img} />
         <StyledCardContent>
-          <StyledTextStack>
-            <Typography gutterBottom variant="h5" component="div">
+          <StyledTextStack spacing={3}>
+            <Typography gutterBottom variant="h6" component="div">
               {name}
             </Typography>
             <div>

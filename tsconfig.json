@@ -4,7 +4,8 @@
     "paths": {
       "@redux": ["./src/redux"],
       "@components": ["./src/components"],
-      "@views": ["./src/views"]
+      "@views": ["./src/views"],
+      "@router": ["./src/router"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

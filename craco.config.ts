@@ -6,6 +6,7 @@ module.exports = {
       "@redux": path.resolve(__dirname, "src/redux"),
       "@components": path.resolve(__dirname, "src/components"),
       "@views": path.resolve(__dirname, "src/views"),
+      "@router": path.resolve(__dirname, "src/router"),
     },
   },
 };

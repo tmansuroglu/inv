@@ -6,15 +6,19 @@ import { Provider as ReduxProvider } from "react-redux";
 import { store } from "./redux";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ReduxProvider store={store}>
-      <RouterProvider router={router} />
-    </ReduxProvider>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <ReduxProvider store={store}>
+        <RouterProvider router={router} />
+      </ReduxProvider>
+    </LocalizationProvider>
   </React.StrictMode>
 );
 

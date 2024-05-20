@@ -22,7 +22,7 @@ export const StyledCardActionArea = styled(CardActionArea)({
 
 export const StyledCardMedia = styled(CardMedia)<CardMediaProps>({
   objectFit: "cover",
-  height: 500,
+  height: 400,
 });
 
 export const StyledCardContent = styled(CardContent)({

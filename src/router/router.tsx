@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "./Layout";
+import { Layout } from "@components";
 import { mainPageLoader } from "./loaders";
 import { MainPage } from "@views";
 
