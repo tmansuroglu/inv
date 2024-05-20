@@ -12,7 +12,7 @@ import { SearchParamKeys } from "@router";
 import { debounce } from "lodash";
 import dayjs, { Dayjs } from "dayjs";
 import Grid from "@mui/material/Unstable_Grid2";
-import { DatePicker } from "@mui/x-date-pickers";
+import { MobileDatePicker } from "@mui/x-date-pickers";
 
 export enum MovieType {
   None = "",
@@ -124,7 +124,7 @@ export const useInputs = () => {
     </Grid>,
     <Grid xs={12} md={4} key="date input">
       <FormControl fullWidth>
-        <DatePicker
+        <MobileDatePicker
           views={["year"]}
           onChange={handleYearInputChange}
           value={yearInputValue}
