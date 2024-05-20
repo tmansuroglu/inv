@@ -1,2 +1,2 @@
 export { router } from "./router";
-export { SearchParamKeys } from "./loaders";
+export { SearchParamKeys, DEFAULT_PAGE } from "./loaders";

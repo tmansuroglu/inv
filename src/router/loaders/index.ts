@@ -1,1 +1,5 @@
-export { mainPageLoader, SearchParamKeys } from "./main-page-loader";
+export {
+  mainPageLoader,
+  SearchParamKeys,
+  DEFAULT_PAGE,
+} from "./main-page-loader";

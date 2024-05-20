@@ -28,6 +28,8 @@ export const useInputs = () => {
           prev.delete(key);
         }
 
+        prev.delete(SearchParamKeys.Page);
+
         return prev;
       }),
     [setSearchParams]

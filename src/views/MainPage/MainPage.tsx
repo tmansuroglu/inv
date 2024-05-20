@@ -1,27 +1,29 @@
 import { Pagination, Stack } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
-
+import Grid from "@mui/material/Unstable_Grid2";
 import { useAsyncValue } from "react-router-dom";
 import { Empty, MovieCard } from "@components";
 import { StyledStack } from "./MainPage.styles";
+import { calculatePageCount } from "./MainPage.utils";
+import { usePagination } from "./MainPage.utils";
+
 // TODO: there is unnecessary search parameter in the requests
 // TODO: any remove
 // TODO: error boundary
-// TODO: Necessary commands to run the application should preferably be communicated in the README.md file.
-// TODO: Type seçimi
-// TODO: yıl seçimi
-// TODO: isim search
 // TODO: fix any
-// TODO: responsive
+// TODO  Deploy?
+
 // TODO: cross browser
-// TODO: test filters
+// TODO: responsive
+// TODO: details page
+// TODO: CRITICAL add episode !
+// TODO: CRITICAL pokemon default
 
 type MainPageProps = {};
 
 export const MainPage = ({ ...props }: MainPageProps) => {
   const { data } = useAsyncValue() as any;
 
-  console.log("data?.Search", data);
+  const { pageNumber, handlePageChange } = usePagination();
 
   if (data?.Response === "False") {
     return <Empty />;
@@ -43,7 +45,9 @@ export const MainPage = ({ ...props }: MainPageProps) => {
       </Grid>
       <Stack justifyContent="center" flexDirection="row">
         <Pagination
-          count={10}
+          count={calculatePageCount(data?.totalResults)}
+          onChange={handlePageChange}
+          page={pageNumber}
           color="primary"
           variant="text"
           shape="rounded"
