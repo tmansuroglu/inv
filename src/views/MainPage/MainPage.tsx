@@ -7,14 +7,13 @@ import { calculatePageCount } from "./MainPage.utils";
 import { usePagination } from "./MainPage.utils";
 
 // TODO: there is unnecessary search parameter in the requests
-// TODO: any remove
-// TODO: error boundary
-// TODO: fix any
-// TODO  Deploy?
+// TODO: improve types. Avoid the use of 'any'.
+// TODO: Add error boundary
+// TODO  Deploy the app
+// TODO: in depth function test
 
 // TODO: cross browser
 // TODO: responsive
-// TODO: details page
 
 type MainPageProps = {};
 

@@ -1,16 +1,38 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Layout } from "@components";
-import { mainPageLoader } from "./loaders";
-import { MainPage } from "@views";
+import { BackButton, Filters, Layout } from "@components";
+import { mainPageLoader, detailsPageLoader } from "./loaders";
+import { MainPage, DetailsPage } from "@views";
+import { AppBar } from "@mui/material";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Layout>
+      <Layout
+        header={
+          <AppBar position="relative">
+            <Filters />
+          </AppBar>
+        }
+      >
         <MainPage />
       </Layout>
     ),
     loader: mainPageLoader,
+  },
+  {
+    path: "/:id",
+    element: (
+      <Layout
+        header={
+          <AppBar position="relative">
+            <BackButton />
+          </AppBar>
+        }
+      >
+        <DetailsPage />
+      </Layout>
+    ),
+    loader: detailsPageLoader,
   },
 ]);

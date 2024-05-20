@@ -1,30 +1,28 @@
-import { PropsWithChildren, Suspense } from "react";
+import { PropsWithChildren, ReactNode, Suspense } from "react";
 import { Await, Outlet, useLoaderData, useNavigation } from "react-router-dom";
-import { Error, Filters, Loader } from "../";
-import { CssBaseline, AppBar, Container, Typography } from "@mui/material";
+import { Error, Loader } from "../";
+import { CssBaseline, Container, Typography } from "@mui/material";
 import { FooterBox, LayoutBox, MainBox, MainContainer } from "./Layout.styles";
 
-type LayoutProps = PropsWithChildren;
+type LayoutProps = PropsWithChildren & { header?: ReactNode };
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ header, children }: LayoutProps) => {
   const navigation = useNavigation();
   const isNavigating = navigation.state === "loading";
 
-  const { titles } = useLoaderData() as any;
+  const { response } = useLoaderData() as any;
 
   return (
     <LayoutBox>
       <CssBaseline />
-      <AppBar position="relative">
-        <Filters />
-      </AppBar>
+      {header}
       <MainBox component="main">
         <MainContainer>
           {isNavigating ? (
             <Loader />
           ) : (
             <Suspense fallback={<Loader />}>
-              <Await resolve={titles} errorElement={<Error />}>
+              <Await resolve={response} errorElement={<Error />}>
                 {children}
                 <Outlet />
               </Await>

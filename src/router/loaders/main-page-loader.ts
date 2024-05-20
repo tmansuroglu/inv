@@ -35,5 +35,5 @@ export const mainPageLoader = async ({ request }: LoaderFunctionArgs) => {
       page: pageParam ? Number(pageParam) : DEFAULT_PAGE,
     })
   );
-  return defer({ titles: promise });
+  return defer({ response: promise });
 };

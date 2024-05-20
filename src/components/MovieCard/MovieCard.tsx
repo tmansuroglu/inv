@@ -6,6 +6,7 @@ import {
   StyledCardMedia,
   StyledTextStack,
 } from "./MovieCard.styles";
+import { useNavigate } from "react-router-dom";
 
 type MovieCardProps = {
   name: string;
@@ -20,9 +21,13 @@ export default function MovieCard({
   releaseDate,
   img,
 }: MovieCardProps) {
+  const navigate = useNavigate();
+
+  const handleClick = () => navigate(imdbId);
+
   return (
     <StyledCard>
-      <StyledCardActionArea>
+      <StyledCardActionArea onClick={handleClick}>
         <StyledCardMedia component="img" image={img} />
         <StyledCardContent>
           <StyledTextStack spacing={3}>
